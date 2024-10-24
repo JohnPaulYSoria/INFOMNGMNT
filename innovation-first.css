@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("./DashboardBG.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+
+.search-bar {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.map {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.color-code {
+    margin-right: 40px;
+}
+
+.color-code ul {
+    list-style-type: none;
+}
+
+.color-code li {
+    margin-bottom: 10px;
+}
+
+.color-code span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.vacant {
+    background-color: green;
+}
+
+.occupied {
+    background-color: red;
+}
+
+.waiting {
+    background-color: yellow;
+}
+
+.na {
+    background-color: gray;
+}
+
+.floor-plan {
+    display: grid;
+    grid-template-columns: repeat(5, 150px);
+    grid-gap: 10px;
+}
+.floor-plan2 {
+    display: grid;
+    grid-template-columns: repeat(6, 150px);
+    grid-gap: 10px;
+}
+.room {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100px;
+    background-color: lightgray;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination .active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.back-button {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.back-button button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .map {
+        flex-direction: column;
+    }
+
+    .floor-plan, .floor-plan2 {
+        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for mobile */
+        grid-gap: 5px;
+    }
+
+    .room {
+        width: 100%;
+        height: 80px;
+        font-size: 12px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .color-code {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .pagination button {
+        padding: 8px 12px;
+    }
+}
+
+/* Smaller screens */
+@media (max-width: 480px) {
+    .floor-plan, .floor-plan2 {
+        grid-template-columns: 1fr; /* Single column for extra small screens */
+    }
+
+    .room {
+        font-size: 10px;
+        height: 60px;
+    }
+}
